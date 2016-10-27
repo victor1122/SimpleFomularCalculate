@@ -56,7 +56,10 @@ public class MainActivity extends AppCompatActivity {
                 float b = Float.parseFloat(numB.getText().toString());
                 float c = Float.parseFloat(numC.getText().toString());
 
-
+                mText.requestFocus();
+                numA.setSelected(false);
+                numB.setSelected(false);
+                numC.setSelected(false);
                 if(a==0){
                     if(b==0&&c==0){
                         text = "Infinite solutions !!!";
@@ -82,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
 
     protected void calculate(float a, float b, float c){
         float delta = (float) Math.pow(b,2)-4*a*c;
-        mText.requestFocus();
         if(delta<0){
             mText.setBackground(getResources().getDrawable(R.drawable.back));
             text="No solution !!!";
